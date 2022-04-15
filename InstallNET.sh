@@ -650,8 +650,9 @@ d-i user-setup/allow-password-weak boolean true
 d-i user-setup/encrypt-home boolean false
 
 d-i clock-setup/utc boolean true
-d-i time/zone string Asia/Shanghai
-d-i clock-setup/ntp boolean false
+d-i time/zone string Asia/ShangHai
+d-i clock-setup/ntp boolean true
+d-i clock-setup/ntp-server string cn.ntp.org.cn
 
 d-i preseed/early_command string anna-install libfuse2-udeb fuse-udeb ntfs-3g-udeb libcrypto1.1-udeb libpcre2-8-0-udeb libssl1.1-udeb libuuid1-udeb zlib1g-udeb wget-udeb
 d-i partman/early_command string [[ -n "\$(blkid -t TYPE='vfat' -o device)" ]] && umount "\$(blkid -t TYPE='vfat' -o device)"; \
