@@ -619,7 +619,7 @@ $UNCOMP < /tmp/$NewIMG | cpio --extract --verbose --make-directories --no-absolu
 
 if [[ "$linux_relese" == 'debian' ]] || [[ "$linux_relese" == 'ubuntu' ]]; then
 cat >/tmp/boot/preseed.cfg<<EOF
-d-i debian-installer/locale string en_US
+d-i debian-installer/locale string zh_CN
 d-i console-setup/layoutcode string us
 
 d-i keyboard-configuration/xkb-keymap string us
@@ -649,7 +649,7 @@ d-i passwd/root-password-crypted password $myPASSWORD
 d-i user-setup/allow-password-weak boolean true
 d-i user-setup/encrypt-home boolean false
 
-d-i clock-setup/utc boolean true
+d-i clock-setup/utc boolean false
 d-i time/zone string Asia/ShangHai
 d-i clock-setup/ntp boolean true
 d-i clock-setup/ntp-server string cn.ntp.org.cn
