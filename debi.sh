@@ -148,33 +148,18 @@ set_debian_version() {
     case $1 in
         9|stretch|oldoldstable)
             set_suite stretch
-            locale=zh_CN.UTF-8
-            country=CN
-            language=zh_CN
             ;;
         10|buster|oldstable)
             set_suite buster
-            locale=zh_CN.UTF-8
-            country=CN
-            language=zh_CN
             ;;
         11|bullseye|stable)
             set_suite bullseye
-            locale=en_US.UTF-8
-            country=US
-            language=en
             ;;
         12|bookworm|testing)
             set_suite bookworm
-            locale=en_US.UTF-8
-            country=US
-            language=en
             ;;
         sid|unstable)
             set_suite sid
-            locale=en_US.UTF-8
-            country=US
-            language=en
             ;;
         *)
             err "Unsupported version: $1"
@@ -257,6 +242,9 @@ while [ $# -gt 0 ]; do
     case $1 in
         --cdn|--aws)
             mirror_protocol=https
+            locale=en_US.UTF-8
+            country=US
+            language=en
             [ "$1" = '--aws' ] && mirror_host=cdn-aws.deb.debian.org
             security_repository=mirror
             ;;
@@ -266,6 +254,9 @@ while [ $# -gt 0 ]; do
             mirror_host=mirrors.ustc.edu.cn
             ntp=ntp.aliyun.com
             security_repository=mirror
+            locale=zh_CN.UTF-8
+            country=CN
+            language=zh_CN
             ;;
         --interface)
             interface=$2
