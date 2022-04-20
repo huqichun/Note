@@ -246,11 +246,11 @@ while [ $# -gt 0 ]; do
             security_repository=mirror
             ;;
         --china)
-            dns='101.6.6.6 166.111.8.28 166.111.8.29'
-            mirror-protocol=https
-            mirror-host=mirrors.ustc.edu.cn
-            security-repository=mirror
-            ntp=ntp.tuna.tsinghua.edu.cn
+            dns='223.5.5.5 223.6.6.6'
+            mirror_protocol=https
+            mirror_host=mirrors.ustc.edu.cn
+            ntp=ntp.aliyun.com
+            security_repository=mirror
             timezone=Asia/Shanghai
             ;;
         --interface)
