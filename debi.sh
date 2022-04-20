@@ -237,14 +237,14 @@ firmware=false
 force_efi_extra_removable=true
 grub_timeout=5
 dry_run=false
+locale=en_US.UTF-8
+country=US
+language=en
 
 while [ $# -gt 0 ]; do
     case $1 in
         --cdn|--aws)
             mirror_protocol=https
-            locale=en_US.UTF-8
-            country=US
-            language=en
             [ "$1" = '--aws' ] && mirror_host=cdn-aws.deb.debian.org
             security_repository=mirror
             ;;
@@ -254,6 +254,8 @@ while [ $# -gt 0 ]; do
             mirror_host=mirrors.ustc.edu.cn
             ntp=ntp.aliyun.com
             security_repository=mirror
+             ;;
+        --CN)                  
             locale=zh_CN.UTF-8
             country=CN
             language=zh_CN
