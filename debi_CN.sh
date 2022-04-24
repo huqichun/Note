@@ -244,7 +244,6 @@ while [ $# -gt 0 ]; do
             mirror_protocol=https
             [ "$1" = '--aws' ] && mirror_host=cdn-aws.deb.debian.org
             security_repository=mirror
-            timezone=Asia/Shanghai
             ;;
         --china)
             dns='223.5.5.5 223.6.6.6'
@@ -252,7 +251,6 @@ while [ $# -gt 0 ]; do
             mirror_host=mirrors.ustc.edu.cn
             ntp=ntp.aliyun.com
             security_repository=mirror
-            timezone=Asia/Shanghai
             ;;
         --interface)
             interface=$2
