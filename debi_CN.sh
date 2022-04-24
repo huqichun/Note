@@ -482,9 +482,8 @@ fi
 $save_preseed << EOF
 # Localization
 
-d-i debian-installer/language string zh_CN
-d-i debian-installer/country string cn
 d-i debian-installer/locale string zh_CN.UTF-8
+d-i console-setup/layoutcode string cn
 d-i keyboard-configuration/xkb-keymap select us
 
 # Network configuration
