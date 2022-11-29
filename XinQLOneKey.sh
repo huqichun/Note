@@ -1,4 +1,4 @@
-#!/usr/bin:/usr/lib/node_modules:/usr/local/bin:
+#!/usr/bin:/usr/lib/node_modules:/usr/local/bin
 
 npm config set registry https://registry.npmmirror.com
 
