@@ -1,4 +1,4 @@
-#!/usr/bin:/usr/lib/node_modules:/usr/bin/env bash
+#!/usr/bin/env bash
 #
 
 # 青龙一键安装脚本
