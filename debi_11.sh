@@ -1,5 +1,6 @@
 #!/bin/sh
 # shellcheck shell=dash
+# https://github.com/bohanyang/debi
 
 set -eu
 
