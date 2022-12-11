@@ -483,11 +483,11 @@ $save_preseed << EOF
 # Localization
 
 d-i debian-installer/language string en
-d-i debian-installer/country string US
+#d-i debian-installer/country string US
 #d-i debian-installer/locale string en_US.UTF-8
 
 #d-i debian-installer/language string zh_CN
-#d-i debian-installer/country string CN
+d-i debian-installer/country string CN
 d-i debian-installer/locale string zh_CN.UTF-8
 
 d-i keyboard-configuration/xkb-keymap select us
