@@ -248,7 +248,7 @@ while [ $# -gt 0 ]; do
         --china)
             dns='223.5.5.5 223.6.6.6'
             mirror_protocol=https
-            mirror_host=mirrors.aliyun.com
+            mirror_host=mirrors.ustc.edu.cn
             ntp=ntp.aliyun.com
             security_repository=mirror
             ;;
