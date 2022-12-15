@@ -68,7 +68,7 @@ cd /ql/data/scripts/
 apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev
 
 cd /ql
-npm install -g npm png-js date-fns axios crypto-js ts-md5 tslib @types/node requests tough-cookie jsdom download tunnel fs ws form-data node-rsa jsencrypt ts-node typescript date-fns canvas
+npm install -g npm png-js date-fns axios crypto-js ts-md5 tslib @types/node requests tough-cookie jsdom download tunnel fs ws form-data node-rsa jsencrypt ts-node typescript date-fns canvas ds
 
 
 echo
