@@ -32,10 +32,6 @@ tee /etc/docker/daemon.json <<-'EOF'
   ]
 }
 EOF
-systemctl daemon-reload
-systemctl restart docker
-
-sleep 3
 
 #测试版本号
 docker version
