@@ -4,7 +4,7 @@
 sudo apt-get update
 
 #安装基本软件
-sudo apt-get install curl wget apt-transport-https ca-certificates software-properties-common
+sudo apt-get install -y curl wget apt-transport-https ca-certificates software-properties-common
 
 #添加docker密钥
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -16,8 +16,8 @@ sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 
 #更新apt，安装docker
-sudo apt-get update
-sudo apt-get install docker-ce
+apt update
+apt-get install -y docker-ce docker-ce-cli containerd.io
 
 #安装docker compose
 tag=$(wget -qO- -t1 -T2 "https://api.github.com/repos/docker/compose/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g') && curl -L https://github.sweb.pw/https://github.com/docker/compose/releases/download/${tag}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
