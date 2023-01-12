@@ -23,7 +23,7 @@ sudo apt-get install docker-ce
 tag=$(wget -qO- -t1 -T2 "https://api.github.com/repos/docker/compose/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g') && curl -L https://github.sweb.pw/https://github.com/docker/compose/releases/download/${tag}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 #docker镜像源
-tee /etc/docker/daemon.json <<-'EOF'
+cat << eof > /etc/docker/daemon.json'
 {
    "registry-mirrors": [
    "https://5ab94d45410f47b8b5667ccbe69007e3.mirror.swr.myhuaweicloud.com",
@@ -31,7 +31,7 @@ tee /etc/docker/daemon.json <<-'EOF'
    "https://qjmjbszu.mirror.aliyuncs.com"
   ]
 }
-EOF
+eof
 
 #测试版本号
 docker version
