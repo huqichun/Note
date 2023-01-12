@@ -35,10 +35,14 @@ EOF
 systemctl daemon-reload
 systemctl restart docker
 
+sleep 3
+
+#测试版本号
+docker version
 
 #测试
-  sudo docker run hello-world |tee build.log
-  if [[ `docker ps -a | grep -c "hello-world"` -ge '1' ]] && [[ `grep -c "hub.docker.com" build.log` -ge '1' ]]; then
+sudo docker run hello-world |tee build.log
+if [[ `docker ps -a | grep -c "hello-world"` -ge '1' ]] && [[ `grep -c "hub.docker.com" build.log` -ge '1' ]]; then
     docker stop $(docker ps -a -q)
     docker rm $(docker ps -a -q)
     docker rmi $(docker images -q)
@@ -48,5 +52,3 @@ systemctl restart docker
     sleep 2
     exit 1
   fi
-
-docker version
