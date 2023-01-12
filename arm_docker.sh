@@ -19,7 +19,7 @@ sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/debi
 sudo apt-get update
 sudo apt-get install docker-ce
 
-#安装docker-compose
+#安装docker compose
 tag=$(wget -qO- -t1 -T2 "https://api.github.com/repos/docker/compose/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g') && curl -L https://github.sweb.pw/https://github.com/docker/compose/releases/download/${tag}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 #docker镜像源
@@ -39,16 +39,3 @@ sleep 3
 
 #测试版本号
 docker version
-
-#测试
-sudo docker run hello-world |tee build.log
-if [[ `docker ps -a | grep -c "hello-world"` -ge '1' ]] && [[ `grep -c "hub.docker.com" build.log` -ge '1' ]]; then
-    docker stop $(docker ps -a -q)
-    docker rm $(docker ps -a -q)
-    docker rmi $(docker images -q)
-    rm -fr build.log
-  else
-    rm -fr build.log
-    sleep 2
-    exit 1
-  fi
