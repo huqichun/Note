@@ -223,8 +223,7 @@ kernel=
 cloud_kernel=false
 bpo_kernel=false
 install_recommends=true
-install='ca-certificates libpam-systemd apt-transport-https ca-certificates sudo vim wget curl net-tools git unzip man-db xz-utils python3 python3-pip jq nload'
-upgrade=
+install=
 upgrade=
 kernel_params=
 force_lowmem=
@@ -569,14 +568,9 @@ fi
 $save_preseed << EOF
 # Localization
 
-#d-i debian-installer/language string en
-#d-i debian-installer/country string US
-#d-i debian-installer/locale string en_US.UTF-8
-
-d-i debian-installer/language string zh_CN
-d-i debian-installer/country string CN
-d-i debian-installer/locale string zh_CN.UTF-8
-
+d-i debian-installer/language string en
+d-i debian-installer/country string US
+d-i debian-installer/locale string en_US.UTF-8
 d-i keyboard-configuration/xkb-keymap select us
 
 # Network configuration
